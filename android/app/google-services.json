@@ -1,0 +1,162 @@
+{
+  "project_info": {
+    "project_number": "891667859833",
+    "project_id": "my-first-project-auth-63671",
+    "storage_bucket": "my-first-project-auth-63671.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891667859833:android:9c78f67cd8397ea2cb87a8",
+        "android_client_info": {
+          "package_name": "com.example.assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe-4o77CWyT17tiHt_6GhpTo6T_ZL9F3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891667859833:android:92a8dc01fa6f63fccb87a8",
+        "android_client_info": {
+          "package_name": "com.example.bankdetails"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe-4o77CWyT17tiHt_6GhpTo6T_ZL9F3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891667859833:android:06fb139ed1198ed8cb87a8",
+        "android_client_info": {
+          "package_name": "com.example.online"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe-4o77CWyT17tiHt_6GhpTo6T_ZL9F3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891667859833:android:164453c429ef8105cb87a8",
+        "android_client_info": {
+          "package_name": "com.example.smitfuturebuilderclasspractice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe-4o77CWyT17tiHt_6GhpTo6T_ZL9F3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891667859833:android:bf77f6d1a7d30d88cb87a8",
+        "android_client_info": {
+          "package_name": "com.example.todayclass21april"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe-4o77CWyT17tiHt_6GhpTo6T_ZL9F3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891667859833:android:e1acf80f159ba361cb87a8",
+        "android_client_info": {
+          "package_name": "com.example.todoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe-4o77CWyT17tiHt_6GhpTo6T_ZL9F3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891667859833:android:f9f9281bfd6a6829cb87a8",
+        "android_client_info": {
+          "package_name": "com.example.webb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe-4o77CWyT17tiHt_6GhpTo6T_ZL9F3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891667859833:android:b4e27a71612298a7cb87a8",
+        "android_client_info": {
+          "package_name": "com.example.webb2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe-4o77CWyT17tiHt_6GhpTo6T_ZL9F3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
