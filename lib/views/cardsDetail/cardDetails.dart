@@ -1,6 +1,9 @@
 import 'package:bankdetails/utils/custome_colors/colors.dart';
+import 'package:bankdetails/utils/image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 
 class CardsView extends StatelessWidget {
   const CardsView({super.key});
@@ -8,7 +11,7 @@ class CardsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: CustomeColors.whitePrimery,
+        backgroundColor: CustomeColors.hintDark,
         body: Column(children: [
           Container(
               child: Padding(
@@ -37,66 +40,76 @@ class CardsView extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: [
-                buildBankCard(
-                    "title", "amount", "change", CustomeColors.textFieldbg),
-                SizedBox(
-                  width: 20,
-                ),
-                buildBankCard(
-                    "title", "amount", "change", CustomeColors.hintDark)
-              ],
+          Container(
+            child: Align(
+          alignment: Alignment.bottomCenter,
+          child: Swiper(
+            itemWidth: 500,
+            itemHeight: 225,
+            loop: true,
+            duration: 1200,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+          return Container(
+            width: 400,
+            height: 400,
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage(imagepath[index])),
+              borderRadius: BorderRadius.circular(20),
             ),
-          )
+          );
+            },
+            itemCount: imagepath.length,
+            layout: SwiperLayout.STACK,
+          ),
+          ),
+        )
         ]));
   }
 }
 
-Widget buildBankCard(String title, String amount, String change, Color) {
-  return Expanded(
-      child: Container(
-    padding: EdgeInsets.all(40),
-    decoration: BoxDecoration(
-      color: Color,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Row(
-        children: [
-          Icon(
-            Icons.circle,
-            size: 20,
-                color: Colors.yellow,
-          ),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.keyboard_arrow_right_rounded,
-                size: 20,
-              )),
-              Icon(
-            Icons.circle,
-            size: 20,
-                color: Colors.red,
-          ),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.keyboard_arrow_right_rounded,
-                size: 20,
-              ))
-        ],
-      ),
-      SizedBox(
-        height: 10,
-      ),
-      Text(
-        amount,
-        style: TextStyle(color: Colors.purple),
-      )
-    ]),
-  ));
-}
+// Widget buildBankCard(String title, String amount, String change, Color) {
+//   return Expanded(
+//       child: Container(
+//     padding: EdgeInsets.all(40),
+//     decoration: BoxDecoration(
+//       color: Color,
+//       borderRadius: BorderRadius.circular(10),
+//     ),
+//     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+//       Row(
+//         children: [
+//           Icon(
+//             Icons.circle,
+//             size: 20,
+//                 color: Colors.yellow,
+//           ),
+//           IconButton(
+//               onPressed: () {},
+//               icon: Icon(
+//                 Icons.keyboard_arrow_right_rounded,
+//                 size: 20,
+//               )),
+//               Icon(
+//             Icons.circle,
+//             size: 20,
+//                 color: Colors.red,
+//           ),
+//           IconButton(
+//               onPressed: () {},
+//               icon: Icon(
+//                 Icons.keyboard_arrow_right_rounded,
+//                 size: 20,
+//               ))
+//         ],
+//       ),
+//       SizedBox(
+//         height: 10,
+//       ),
+//       Text(
+//         amount,
+//         style: TextStyle(color: Colors.purple),
+//       )
+//     ]),
+//   ));
+// }

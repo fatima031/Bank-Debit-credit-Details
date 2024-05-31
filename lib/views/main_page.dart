@@ -1,3 +1,4 @@
+import 'package:bankdetails/controllers/homeController.dart';
 import 'package:bankdetails/utils/custome_colors/colors.dart';
 import 'package:bankdetails/views/Dashboard/dashboard.dart';
 import 'package:bankdetails/views/addTransections/addTransections.dart';
@@ -8,14 +9,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Main_Page extends StatefulWidget {
-  const Main_Page({super.key});
+  Main_Page({super.key});
+  
 
   @override
   State<Main_Page> createState() => _Main_PageState();
 }
-
+HomeController homeControl = Get.put(HomeController());
 class _Main_PageState extends State<Main_Page> {
-  
   Widget currentScreen = DashboardView();
   int activeTab = 0;
   @override
@@ -108,7 +109,25 @@ class _Main_PageState extends State<Main_Page> {
                   },
                   child: IconButton(
                       onPressed: () {
-                        bottomSheeet();
+                        Get.bottomSheet(Container(
+                          padding: EdgeInsets.symmetric(horizontal: 30),
+                          height: 300,
+                          decoration: BoxDecoration(
+                              color: CustomeColors.textFieldbg,
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(12),
+                                  topLeft: Radius.circular(12))),
+                          child: GetBuilder<HomeController>(builder: (context) {
+                            
+                            return ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
+                                shrinkWrap: true,
+                                itemCount: homeControl.historyData.length,
+                                itemBuilder: (context, index) {
+                                  return ListTile(title: Text("abc"));
+                                });
+                          }),
+                        ));
                       },
                       icon: Icon(Icons.add))),
             ],

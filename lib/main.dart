@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
-      home: Main_Page(),
+      home: splash_view(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
 

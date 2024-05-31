@@ -5,6 +5,7 @@ import 'package:bankdetails/utils/btns/custome_buttons.dart';
 import 'package:bankdetails/utils/custome_colors/colors.dart';
 import 'package:bankdetails/utils/thexField/textField.dart';
 import 'package:bankdetails/views/homeView.dart';
+import 'package:bankdetails/views/main_page.dart';
 import 'package:bankdetails/views/signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class Login_View extends StatelessWidget {
       }
     }
 
-    Get.to(() => Home_View());
+    Get.to(() => Main_Page());
     // Navigator.push(
     // context, MaterialPageRoute(builder: (context) => Home_View()));
   }
@@ -59,7 +60,7 @@ class Login_View extends StatelessWidget {
                     ),
                     MyTextField(
                         hintText: "Password",
-                        obscureText: false,
+                        obscureText: true,
                         controller: homeControl.passwordController),
                     SizedBox(
                       height: 10,
