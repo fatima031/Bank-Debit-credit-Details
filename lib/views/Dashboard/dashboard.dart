@@ -145,24 +145,54 @@ buildAddCard() {
       child: FloatingActionButton(
           // elevation: 0,
           onPressed: () {
-            Get.bottomSheet(Container(
-              padding: EdgeInsets.symmetric(horizontal: 30),
-              height: 300,
-              decoration: BoxDecoration(
-                  color: CustomeColors.textFieldbg,
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(12),
-                      topLeft: Radius.circular(12))),
-              child: GetBuilder<HomeController>(builder: (context) {
-                return ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: homeControl.historyData.length,
-                    itemBuilder: (context, index) {
-                      return ListTile(title: Text("abc"));
-                    });
-              }),
-            ));
+            showDialog(
+              
+                context: Get.overlayContext!,
+                builder: (context) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: AlertDialog(
+                    
+                        title: Container(
+                          
+                          child: Column(
+                            children: [
+                              Center(
+                                child: Container(
+                                  child: Text("Add New Transaction"),
+                                ),
+                              ),
+                              TextField(
+                                decoration: InputDecoration(
+                                  label: Text("For What")
+                                ),
+                              ),
+                              TextField(
+                                 decoration: InputDecoration(
+                                  label: Text("Amount")
+                                ),
+                              ),
+                              TextField(
+                                 decoration: InputDecoration(
+                                  label: Text("Change recieved"),
+                        
+                                  
+                                ),
+                              ),
+                              SizedBox(height: 20,),
+                        
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(children: [
+                                  ElevatedButton(onPressed: (){}, child: Text("cancel")),
+                                  SizedBox(width: 20,),
+                                  ElevatedButton(onPressed: (){}, child: Text("Add")),
+                                ],),
+                              )
+                            ],
+                          ),
+                        )
+                      ),
+                ));
           },
           child: Icon(
             Icons.add,

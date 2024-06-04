@@ -46,7 +46,10 @@ class Login_View extends StatelessWidget {
             children: [
               Container(
                 height: 300,
-                child: Image.asset("assets/images/myBank.png"),
+                child: Image.asset("assets/images/splashCard.jpeg", fit: BoxFit.cover,),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Container(
                 child: Column(

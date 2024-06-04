@@ -16,13 +16,12 @@ class splash_viewState extends State<splash_view> {
     super.initState();
 
     Timer(Duration(seconds: 5), () {
-      Get.offAll(() =>  Login_View());
+      Get.offAll(() => Login_View());
     });
   }
 
   Widget build(BuildContext context) {
     return Scaffold(
-      
         body: Container(
       child: Container(
           width: Get.width,
@@ -30,7 +29,7 @@ class splash_viewState extends State<splash_view> {
           child:
               // Image.asset("assets/images/bankingimage.jpg"),
               Image.asset(
-            "assets/images/myBank.png",
+            "assets/images/splashCard.jpeg",
             fit: BoxFit.fitHeight,
           )),
     ));

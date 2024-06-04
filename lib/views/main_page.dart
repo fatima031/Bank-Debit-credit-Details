@@ -1,3 +1,4 @@
+
 import 'package:bankdetails/controllers/homeController.dart';
 import 'package:bankdetails/utils/custome_colors/colors.dart';
 import 'package:bankdetails/views/Dashboard/dashboard.dart';
@@ -8,15 +9,24 @@ import 'package:bankdetails/views/graphicView/graphic.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: camel_case_types
 class Main_Page extends StatefulWidget {
   Main_Page({super.key});
+
+ 
   
 
   @override
   State<Main_Page> createState() => _Main_PageState();
 }
-HomeController homeControl = Get.put(HomeController());
+
+  HomeController homeControl = Get.put(HomeController());
+ TextEditingController amountValue = TextEditingController();
+
 class _Main_PageState extends State<Main_Page> {
+
+
+
   Widget currentScreen = DashboardView();
   int activeTab = 0;
   @override
@@ -44,7 +54,7 @@ class _Main_PageState extends State<Main_Page> {
                 ),
                 const CircleAvatar(
                   backgroundImage: AssetImage(
-                    "assets/images/bankingimage.jpg",
+                    "assets/images/WhatsApp Image 2024-06-01 at 3.34.36 PM (1).jpeg",
                   ),
                   radius: 20,
                 )
@@ -78,7 +88,7 @@ class _Main_PageState extends State<Main_Page> {
                 onPressed: () {
                   setState(() {
                     activeTab = 1;
-                    currentScreen = const Graphic_View();
+                    currentScreen =  Graphic_View();
                   });
                 },
                 child: Icon(
@@ -91,7 +101,7 @@ class _Main_PageState extends State<Main_Page> {
                 onPressed: () {
                   setState(() {
                     activeTab = 2;
-                    currentScreen = const CardsView();
+                    currentScreen =  CardsView();
                   });
                 },
                 child: Icon(
@@ -109,27 +119,57 @@ class _Main_PageState extends State<Main_Page> {
                   },
                   child: IconButton(
                       onPressed: () {
-                        Get.bottomSheet(Container(
-                          padding: EdgeInsets.symmetric(horizontal: 30),
-                          height: 300,
-                          decoration: BoxDecoration(
-                              color: CustomeColors.textFieldbg,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(12),
-                                  topLeft: Radius.circular(12))),
-                          child: GetBuilder<HomeController>(builder: (context) {
-                            
-                            return ListView.builder(
-                                physics: NeverScrollableScrollPhysics(),
-                                shrinkWrap: true,
-                                itemCount: homeControl.historyData.length,
-                                itemBuilder: (context, index) {
-                                  return ListTile(title: Text("abc"));
-                                });
-                          }),
-                        ));
+                        showDialog(
+              
+                context: Get.overlayContext!,
+                builder: (context) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: AlertDialog(
+                    
+                        title: Container(
+                          
+                          child: Column(
+                            children: [
+                              Center(
+                                child: Container(
+                                  child: Text("Add New Transaction"),
+                                ),
+                              ),
+                          const    TextField(
+                                decoration: InputDecoration(
+                                  label: Text("For What")
+                                ),
+                              ),
+                         const     TextField(
+                          
+                                 decoration: InputDecoration(
+                                  label: Text("Amount")
+                                ),
+                              ),
+                           const   TextField(
+                                 decoration: InputDecoration(
+                                  label: Text("Change recieved"),
+                        
+                                  
+                                ),
+                              ),
+                         const     SizedBox(height: 20,),
+                        
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(children: [
+                                  // ElevatedButton(onPressed: (){}, child: const Text("cancel")),
+                              const    SizedBox(width: 20,),
+                                  ElevatedButton(onPressed: (){}, child: const Text("Add")),
+                                ],),
+                              )
+                            ],
+                          ),
+                        )
+                      ),
+                ));
                       },
-                      icon: Icon(Icons.add))),
+                      icon: const Icon(Icons.add))),
             ],
           ),
         ),

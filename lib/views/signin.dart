@@ -44,7 +44,7 @@ class Register extends StatelessWidget {
             children: [
               Container(
                 height: 300,
-                child: Image.asset("assets/images/myBank.png"),
+                child: Image.asset("assets/images/splashCard.jpeg"),
               ),
               Container(
                 child: Column(
